@@ -1,11 +1,11 @@
 FROM bde2020/hadoop-base:2.0.0-hadoop3.2.1-java8
 
-# --- FIX: ARREGLO DE REPOSITORIOS ---
-# Como Debian Stretch es antiguo, movemos los sources a archive.debian.org
+
+#  Se mueven los sources a archive.debian.org
 RUN echo "deb http://archive.debian.org/debian stretch main" > /etc/apt/sources.list && \
     echo "deb http://archive.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list
 
-# Ejecutamos update ignorando la validación de fecha (necesario para repos antiguos)
+# Se ejecuta update ignorando la validación de fecha 
 RUN apt-get -o Acquire::Check-Valid-Until=false update && \
     apt-get -o Acquire::Check-Valid-Until=false install -y wget tar python
 

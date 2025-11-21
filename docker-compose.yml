@@ -26,20 +26,20 @@ services:
     depends_on:
       - namenode
 
-  # --- Cliente Pig (Donde ejecutaremos los análisis) ---
+  # --- Cliente Pig 
   pig-client:
     build: 
       context: .
       dockerfile: Dockerfile.pig
     container_name: pig-client
-    # Mantenemos el contenedor encendido para entrar por terminal
+    
     command: tail -f /dev/null 
     env_file:
       - ./hadoop.env
     environment:
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
     volumes:
-      # Montamos tu carpeta actual en /app para que Pig vea los archivos .txt y .pig
+      
       - ./:/app  
     depends_on:
       - namenode
