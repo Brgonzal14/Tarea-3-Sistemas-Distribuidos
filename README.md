@@ -109,20 +109,20 @@ Una vez finalizado el procesamiento, puedes consultar el **Top 10 de palabras m√
 
 ```bash
 # En PowerShell
-docker exec -it pig-client hdfs dfs -cat /output/yahoo_wc/part-r-00000 | Select-Object -First 10
+docker exec -it pig-client hdfs dfs -cat /output/yahoo_wc/part-r-00000 | Select-Object -First 11
 
 # En Linux/Mac/Bash
-docker exec -it pig-client hdfs dfs -cat /output/yahoo_wc/part-r-00000 | head -n 10
+docker exec -it pig-client hdfs dfs -cat /output/yahoo_wc/part-r-00000 | head -n 11
 ```
 
 **Resultados LLM (IA):**
 
 ```bash
 # En PowerShell
-docker exec -it pig-client hdfs dfs -cat /output/llm_wc/part-r-00000 | Select-Object -First 10
+docker exec -it pig-client hdfs dfs -cat /output/llm_wc/part-r-00000 | Select-Object -First 11
 
 # En Linux/Mac/Bash
-docker exec -it pig-client hdfs dfs -cat /output/llm_wc/part-r-00000 | head -n 10
+docker exec -it pig-client hdfs dfs -cat /output/llm_wc/part-r-00000 | head -n 11
 ```
 
 -----
