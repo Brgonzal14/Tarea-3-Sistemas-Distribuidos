@@ -1,24 +1,24 @@
 /* wordcount.pig */
 
--- 1. Cargar los datos desde HDFS (El parámetro $INPUT se pasa al ejecutar)
+-- 1. Carga los datos desde HDFS 
 lines = LOAD '$INPUT' USING PigStorage('\n') AS (line:chararray);
 
--- 2. Tokenizar: Separar las líneas en palabras y aplanar la lista
+-- 2. Tokenizar: Separa las líneas en palabras y aplana la lista
 words = FOREACH lines GENERATE FLATTEN(TOKENIZE(line)) as word;
 
--- 3. Limpieza: Convertir a minúsculas y filtrar vacíos
+-- 3. Limpieza: Convierte a minúsculas y filtra los vacíos
 clean_words_step1 = FOREACH words GENERATE LOWER(word) as word;
 -- Filtramos palabras que sean solo signos o vacías (opcional pero recomendado)
 clean_words = FILTER clean_words_step1 BY SIZE(word) > 1;
 
--- 4. Agrupar por palabra
+-- 4. Agrupa por palabra
 grouped = GROUP clean_words BY word;
 
--- 5. Contar ocurrencias
+-- 5. Cuenta las ocurrencias
 wordcount = FOREACH grouped GENERATE group, COUNT(clean_words) as count;
 
--- 6. Ordenar por frecuencia (de mayor a menor) - Útil para el top 50
+-- 6. Ordena por frecuencia (de mayor a menor) 
 ordered_wordcount = ORDER wordcount BY count DESC;
 
--- 7. Guardar el resultado en HDFS (El parámetro $OUTPUT se pasa al ejecutar)
+-- 7. Guardar el resultado en HDFS 
 STORE ordered_wordcount INTO '$OUTPUT' USING PigStorage(',');
