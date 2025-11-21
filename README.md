@@ -11,7 +11,7 @@ El sistema utiliza una arquitectura **Batch (Offline)** donde los datos son proc
 
 ---
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 El clúster está contenerizado con Docker y consta de los siguientes servicios:
 
@@ -23,7 +23,7 @@ El clúster está contenerizado con Docker y consta de los siguientes servicios:
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 TAREA_3_SISTEMAS_DISTRIBUIDOS/
@@ -38,11 +38,11 @@ TAREA_3_SISTEMAS_DISTRIBUIDOS/
 
 -----
 
-## 🚀 Instrucciones de Ejecución
+## Instrucciones de Ejecución
 
 ### 1\. Levantar la Infraestructura
 
-Asegúrate de tener Docker Desktop corriendo y ejecuta:
+Docker debe estar corriendo, para luego ejecutar:
 
 ```bash
 docker compose up -d --build
@@ -101,9 +101,9 @@ docker exec -it pig-client pig -param INPUT=/input/llm_answers.txt -param OUTPUT
 
 -----
 
-## 📊 Visualización de Resultados
+## Visualización de Resultados
 
-Una vez finalizado el procesamiento, puedes consultar el **Top 10 de palabras más frecuentes** directamente desde la terminal.
+Una vez finalizado el procesamiento, para coonsultar el **Top 10 de palabras más frecuentes** directamente desde la terminal.
 
 **Resultados Yahoo (Humanos):**
 
@@ -127,7 +127,7 @@ docker exec -it pig-client hdfs dfs -cat /output/llm_wc/part-r-00000 | head -n 1
 
 -----
 
-## ⏹️ Detener el Sistema
+## Detener el Sistema
 
 Para apagar el clúster y liberar recursos:
 
