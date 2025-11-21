@@ -1,13 +1,11 @@
 `README.md`.
 
------
-
 ````markdown
 # Tarea 3: Análisis Lingüístico Offline con Hadoop y Pig
 
-Este proyecto implementa una solución de **Big Data** utilizando el ecosistema de **Apache Hadoop** para realizar un análisis comparativo de vocabulario entre respuestas humanas (Yahoo! Answers) y respuestas generadas por Inteligencia Artificial (LLM).
+Este proyecto implementa una solución de Big Data utilizando el ecosistema de Apache Hadoop para realizar un análisis comparativo de vocabulario entre respuestas humanas (Yahoo! Answers) y respuestas generadas por Inteligencia Artificial (LLM).
 
-El sistema utiliza una arquitectura **Batch (Offline)** donde los datos son procesados mediante scripts de **Apache Pig**, ejecutando tareas de MapReduce simplificadas para tokenización, limpieza y conteo de frecuencia de palabras.
+El sistema utiliza una arquitectura Batch (Offline) donde los datos son procesados mediante scripts de Apache Pig, ejecutando tareas de MapReduce simplificadas para tokenización, limpieza y conteo de frecuencia de palabras.
 
 ---
 
@@ -25,7 +23,6 @@ El clúster está contenerizado con Docker y consta de los siguientes servicios:
 
 ## Estructura del Proyecto
 
-```text
 TAREA_3_SISTEMAS_DISTRIBUIDOS/
 ├── docker-compose.yml    # Orquestación del clúster Hadoop
 ├── Dockerfile.pig        # Definición de la imagen del cliente Pig
